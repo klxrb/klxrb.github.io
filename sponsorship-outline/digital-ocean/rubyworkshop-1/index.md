@@ -37,6 +37,10 @@ As our topic suggests, we will try to simulate a condition whereby 2-3 different
 
 We compared with a few providers (Koding - 1 free VM, AWS - needs credit card) and realized that Digital Ocean could provide an easier, better, smoother, closer to real life experience for our little workshop.
 
+What would help us a lot, is if Digital Ocean can provide us some free credits for this event. 
+
+We know that DO promo codes are usually for new signups, so we're not sure how can we provide for existing DO users. If there's no way for this, then it's fine we can ask the all attendees to create new accounts.
+
 
 ## What We Offer
 
