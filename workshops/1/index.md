@@ -25,8 +25,9 @@ Please make sure you have done the following :
 
 - A [Github](https://github.com) account
 - A [Digital Ocean](https://digitalocean.com) account & cash-in the voucher given earlier
-- Have Ruby 1.9.3 installed  
+- Have Ruby installed locally  
 - Have Redis Server installed locally
+- Have PostgreSQL installed locally
 - Prepare SSH key for your machine
 
 
