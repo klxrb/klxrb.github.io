@@ -13,6 +13,12 @@ toc: true
 share: false
 ---
 
+<style>
+.how-to { display: none; margin-top: 24px; }
+.how-to + p { margin: 0; }
+.no-margin-bottom { margin-bottom: 0; }
+</style>
+
 ## Before you continue
 
 Please make sure you have done the following :
@@ -39,20 +45,108 @@ And finally, we need to write an automated deployment script to deploy both apps
 
 Estimate time: 20 mins
 
-<input type="checkbox" id="c1_1"> User login using [Devise](https://github.com/plataformatec/devise)  
-<input type="checkbox" id="c1_2"> Setup [Upmin Admin](https://github.com/upmin/upmin-admin-ruby) on /admin  
+<p class="no-margin-bottom">
+<input type="checkbox" id="c1_1"> Create Rails App with PostgreSQL database
+[<a href="#" class="how-to-toggle">how ah?</a>]
+</p>
+<div class="how-to">
+{% highlight bash %}
+$ rails new shopping_cart --database=postgresql
+$ cd shopping_cart
+$ rake db:create
+{% endhighlight %}
+</div>
+
+<input type="checkbox" id="c1_1"> Admin login using [Devise](https://github.com/plataformatec/devise)
+[<a href="#" class="how-to-toggle">how ah?</a>]
+<div class="how-to">
+{% highlight ruby %} 
+# Gemfile
+gem 'devise' 
+{% endhighlight %}
+
+{% highlight bash %}
+$ rails generate devise:install
+$ rails generate devise Admin
+
+$ rake db:migrate
+{% endhighlight %}
+</div>
+
+<input type="checkbox" id="c1_2"> Setup [Upmin Admin](https://github.com/upmin/upmin-admin-ruby) on /admin
+[<a href="#" class="how-to-toggle">how ah?</a>]  
+<div class="how-to">
+{% highlight ruby %} 
+# Gemfile
+gem 'upmin-admin'
+{% endhighlight %}
+
+{% highlight ruby %}
+# config/routes.rb
+mount Upmin::Engine => '/admin'
+{% endhighlight %}
+</div>
+
 <input type="checkbox" id="c1_3"> Scaffold "Products" Model  
-<input type="checkbox" id="c1_4"> Checkout Page  
-<input type="checkbox" id="c1_5"> Sales Report in Admin area
+<input type="checkbox" id="c1_4"> Add some styles
+[<a href="#" class="how-to-toggle">how ah?</a>]
+<div class="how-to">
+{% highlight ruby %} 
+# Gemfile
+gem 'foundation-rails'
+{% endhighlight %}
+
+{% highlight bash %}
+$ rails g foundation:install
+{% endhighlight %}
+</div>
+
+<input type="checkbox" id="c1_5"> Scaffold "Sales"  
+<input type="checkbox" id="c1_6"> Product Checkout & Sales
 
 
 ## Step 2: Creating the CRM
 
 Estimate time: 30 mins
 
-<input type="checkbox" id="c2_1"> User login using [Devise](https://github.com/plataformatec/devise)  
-<input type="checkbox" id="c2_2"> Scaffold Customers Model   
-<input type="checkbox" id="c2_3"> Setup [Upmin Admin](https://github.com/upmin/upmin-admin-ruby)  
+<input type="checkbox" id="c2_1"> User login using [Devise](https://github.com/plataformatec/devise)
+[<a href="#" class="how-to-toggle">how ah?</a>]
+<div class="how-to">
+{% highlight ruby %} 
+# Gemfile
+gem 'devise' 
+{% endhighlight %}
+
+{% highlight bash %}
+$ rails generate devise:install
+$ rails generate devise Admin
+
+$ rake db:migrate
+{% endhighlight %}
+</div>
+
+<input type="checkbox" id="c2_2"> Scaffold Customers Model
+[<a href="#" class="how-to-toggle">how ah?</a>]
+<div class="how-to">
+{% highlight bash %} 
+$ rails g resource Customer email:string first_name:string last_name:string address:string zipcode:string country:string
+{% endhighlight %}
+</div>
+
+<input type="checkbox" id="c2_3"> Setup [Upmin Admin](https://github.com/upmin/upmin-admin-ruby)
+[<a href="#" class="how-to-toggle">how ah?</a>]
+<div class="how-to">
+{% highlight ruby %} 
+# Gemfile
+gem 'upmin-admin' 
+{% endhighlight %}
+
+{% highlight ruby %}
+# config/routes.rb
+  mount Upmin::Engine => '/'
+{% endhighlight %}
+</div>
+
 <input type="checkbox" id="c2_4"> "API Applications" Model  
 <input type="checkbox" id="c2_5"> Setup API with [Grape](https://github.com/intridea/grape)  
 <input type="checkbox" id="c2_6"> Setup API Documentation with [Grape-Swagger-Rails](https://github.com/BrandyMint/grape-swagger-rails)  
@@ -62,9 +156,9 @@ Estimate time: 30 mins
 
 Estimate time: 20 mins
 
-<input type="checkbox" id="c3_1"> Setup [Rails Config](https://github.com/railsconfig/rails_config)  
-<input type="checkbox" id="c3_2"> Generate API token for Shopping Cart app   
-<input type="checkbox" id="c3_3"> Use API token to send customer data to CRM  
+<input type="checkbox" id="c3_1"> Generate API token for Shopping Cart app   
+<input type="checkbox" id="c3_2"> Use API token to send customer data to CRM  
+<input type="checkbox" id="c3_3"> Setup [Rails Config](https://github.com/railsconfig/rails_config)  
 
 
 ## Step 4: Queue Up Jobs
@@ -98,9 +192,11 @@ Estimate time: 20 mins
 
 Estimate time: 15 mins
 
-<input type="checkbox" id="c7_1"> Setup [Capistrano](https://github.com/capistrano/capistrano) with [Capistrano Rbenv](https://github.com/cap id="c5_1"istrano/rbenv) + [Capistrano Sidekiq](https://github.com/seuros/capistrano-sidekiq) + [Capistrano Unicorn Ngi id="c5_1"nx](https://github.com/capistrano-plugins/capistrano-unicorn-nginx)  
+<input type="checkbox" id="c7_1"> Setup [Capistrano](https://github.com/capistrano/capistrano) with [Capistrano Rbenv](https://github.com/cap id="c5_1"istrano/rbenv) + [Capistrano Sidekiq](https://github.com/seuros/capistrano-sidekiq) + [Capistrano Unicorn Nginx](https://github.com/capistrano-plugins/capistrano-unicorn-nginx)  
 <input type="checkbox" id="c7_2"> Create & upload production settings  
 <input type="checkbox" id="c7_3"> Finally ... Deploy Live !!  
+
+
 
 ---
 
@@ -144,6 +240,11 @@ $(function(){
   })
 
   recalculate();
+
+  $('a.how-to-toggle').click(function(){
+    $(this).parents('p').next('.how-to').toggle()
+    return false;
+  })
   
 });
 
