@@ -4,8 +4,8 @@ title: KL Ruby Brigade
 description:
 logo: # 120x120 px default image used for Twitter summary card
 teaser: # 400x250 px default teaser image used in image archive grid
-locale:
-url:
+locale: en_US
+url: http://rubybrigade.my
 
 # Jekyll configuration
 
