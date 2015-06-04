@@ -11,6 +11,8 @@ image:
 ads: false
 ---
 
+Good news everyone! We're on <i class="fa fa-slack"></i>Slack @ <a href="https://rubymy.slack.com">https://rubymy.slack.com</a>!
+
 <strong>Invite yourself to our <a class="icon" href="https://rubymy.slack.com"><i class="fa fa-slack"></i>Slack</a> group!</strong>
 
 <form id="slack_invite">
