@@ -38,6 +38,8 @@ $(function(){
 
     error = false;
 
+    $('#status_notice, #error_notice').html('');
+
     disable_submit();
     
     if(!$('#email_invite').val().trim()){
