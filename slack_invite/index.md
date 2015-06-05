@@ -16,7 +16,7 @@ Good news everyone! We're on <i class="fa fa-slack"></i>Slack @ <a href="https:/
 <strong>Invite yourself to our <a class="icon" href="https://rubymy.slack.com"><i class="fa fa-slack"></i>Slack</a> group!</strong>
 
 <form id="slack_invite">
-  Email: <input type="text" name="email_invite" id="email_invite" placeholder="please@invite.me">
+  Email: <input type="email" name="email_invite" id="email_invite" placeholder="please@invite.me">
   <button id="submit_button" type="submit"><span>Submit</span><i class="fa fa-spinner fa-spin hidden"></i></button>
   <span id="error_notice"></span>
   <span id="status_notice"></span>
