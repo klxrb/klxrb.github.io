@@ -22,6 +22,7 @@ Good news everyone! We're on <i class="fa fa-slack"></i>Slack @ <a href="https:/
   <span id="status_notice"></span>
 </form>
 
+<font size="-1">Want to know how this form was made? Check out <a href="https://github.com/klxrb/slack-invite">https://github.com/klxrb/slack-invite</a></font>
 
 <script>
 $(function(){
