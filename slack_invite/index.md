@@ -22,7 +22,7 @@ Good news everyone! We're on <i class="fa fa-slack"></i>Slack @ <a href="https:/
   <span id="status_notice"></span>
 </form>
 
-<font size="-1">Want to know how this form was made? Check out <a href="https://github.com/klxrb/slack-invite">https://github.com/klxrb/slack-invite</a></font>
+<font size="-1">Want to know how this was made? Check out <a href="https://github.com/klxrb/slack-invite">https://github.com/klxrb/slack-invite</a></font>
 
 <script>
 $(function(){
@@ -44,7 +44,7 @@ $(function(){
     $('#status_notice, #error_notice').html('');
 
     disable_submit();
-    
+
     if(!$('#email_invite').val().trim()){
       $('#error_notice').html('Please enter a valid email.')
       restore_submit();
@@ -72,7 +72,7 @@ $(function(){
         }
       })
     }
-    
+
     return false;
   })
 })
