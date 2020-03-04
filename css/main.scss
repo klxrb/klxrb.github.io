@@ -30,3 +30,7 @@
 @import "layout";
 @import "pygments";
 @import "slack_invite";
+
+.sliding-menu-content .menu-item>li img.teaser {
+  background-color: white;
+}
